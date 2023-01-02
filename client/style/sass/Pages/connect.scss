@@ -1,0 +1,83 @@
+#body-login {
+  background: url('/client/images/fond-tn.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+#main-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .container-connexion {
+    // background: linear-gradient(180deg, rgba(0,0,0,0.8) 51%, rgba(137,0,0,0.8) 83%, rgba(255,0,0,0.8) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 55%, rgba(57,57,57,0.8) 80%, rgba(122,122,122,0.8) 100%);
+    backdrop-filter: blur(5px);
+    height: 450px;
+    width: 300px;
+    padding: 100px;
+
+    .span-login {
+      color: #fff;
+      font-family: 'Cavilant';
+      font-size: 20px;
+      border-bottom: 2px solid red;
+      padding-bottom: 5px;
+    }
+
+    form {
+      margin-top: 80px;
+      font-size: 14px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          margin-bottom: 5px;
+          font-family: sans-serif;
+          letter-spacing: 2px;
+          color: gray;
+        }
+
+        input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid #fff;
+          color: #fff;
+          font-size: 16px;
+          height: 30px;
+          
+
+          &:focus-visible {
+            outline: none;
+          }
+        }
+      }
+
+      .password-input {
+        margin-top: 60px;
+      }
+
+      button {
+        background-color: red;
+        color: #fff;
+        font-family: 'Cavilant';
+        border: none;
+        width: 100%;
+        height: 60px;
+        margin-top: 100px;
+        cursor: pointer;
+      }
+
+      .span-forget {
+        font-family: sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

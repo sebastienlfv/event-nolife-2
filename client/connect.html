@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../client/style/style.css">
+  <script src="./js/auth.js" defer></script>
+  <title>NOLIFE - Connexion</title>
+</head>
+<body id="body-login">
+  <main id="main-login">
+    <section class="container-connexion">
+      <span class="span-login">LOGIN</span>
+      <form onsubmit="return login()" class="login-input">
+        <div class="email-input">
+          <label>EMAIL</label>
+          <input id="email" type="email">
+        </div>
+        <div class="password-input">
+          <label>PASSWORD</label>
+          <input id="password" type="password">
+        </div>
+        <button class="login-submit">LOGIN</button>
+        <span class="span-forget">Mot de passe oublier ?</span>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

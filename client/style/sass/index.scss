@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Cavilant';
+  src: url('/client/fonts/Cavilant.otf');
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+@import './Pages/home.scss';
+@import './Pages/connect.scss';

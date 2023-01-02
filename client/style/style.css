@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Cavilant";
+  src: url("/client/fonts/Cavilant.otf");
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+#body-home {
+  background: url("/client/images/fond-tn.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 90vh;
+}
+
+.nav-border {
+  border-left: 4px solid #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 0px;
+}
+
+.nav-border-bis {
+  border-left: 4px solid transparent;
+  padding: 10px 0px;
+}
+
+#main-home {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  height: 90%;
+  width: 90%;
+  margin-top: 90px !important;
+  margin: auto;
+}
+#main-home .container {
+  height: 100%;
+  display: flex;
+}
+#main-home img {
+  display: flex;
+  padding-top: 20px;
+  margin: auto;
+}
+#main-home .details {
+  margin-top: 80px;
+}
+#main-home .navigation-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 25%;
+  height: 100%;
+}
+#main-home .navigation-container-link {
+  display: flex;
+  padding-left: 55px;
+  margin: auto;
+  align-items: center;
+  margin-top: 15px;
+  cursor: pointer;
+}
+#main-home .navigation-container-link:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#main-home .navigation-container-link i {
+  font-size: 25px;
+  color: #fff;
+  margin-right: 20px;
+}
+#main-home .navigation-container-link p {
+  color: #fff;
+  font-family: "Cavilant";
+  font-size: 14px;
+}
+#main-home .profile-container {
+  text-align: center;
+  margin-top: 180px;
+}
+#main-home .profile-container img {
+  width: 70px;
+}
+#main-home .profile-container p {
+  color: white;
+  font-family: sans-serif;
+  padding-top: 20px;
+  font-family: "Cavilant";
+}
+#main-home .event-container {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  justify-content: center;
+}
+#main-home .event-container-details {
+  background: url("/client/images/banner-csgo.jpg");
+  background-size: cover;
+  box-shadow: 0px 5px 10px 2px #000;
+  width: 400px;
+  height: 100px;
+  display: flex;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Cavilant";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#main-home .event-container-details div .participant {
+  margin-top: 15px;
+}
+
+#body-login {
+  background: url("/client/images/fond-tn.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+#main-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#main-login .container-connexion {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 55%, rgba(57, 57, 57, 0.8) 80%, rgba(122, 122, 122, 0.8) 100%);
+  backdrop-filter: blur(5px);
+  height: 450px;
+  width: 300px;
+  padding: 100px;
+}
+#main-login .container-connexion .span-login {
+  color: #fff;
+  font-family: "Cavilant";
+  font-size: 20px;
+  border-bottom: 2px solid red;
+  padding-bottom: 5px;
+}
+#main-login .container-connexion form {
+  margin-top: 80px;
+  font-size: 14px;
+}
+#main-login .container-connexion form div {
+  display: flex;
+  flex-direction: column;
+}
+#main-login .container-connexion form div label {
+  margin-bottom: 5px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  color: gray;
+}
+#main-login .container-connexion form div input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  height: 30px;
+}
+#main-login .container-connexion form div input:focus-visible {
+  outline: none;
+}
+#main-login .container-connexion form .password-input {
+  margin-top: 60px;
+}
+#main-login .container-connexion form button {
+  background-color: red;
+  color: #fff;
+  font-family: "Cavilant";
+  border: none;
+  width: 100%;
+  height: 60px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+#main-login .container-connexion form .span-forget {
+  font-family: sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
