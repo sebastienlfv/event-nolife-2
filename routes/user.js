@@ -10,5 +10,6 @@ router.post('/login', authCtrl.login)
 // user db
 router.get('/:id', userCtrl.getOneUser)
 router.delete('/:id', userCtrl.deleteUser)
+router.put('/:id', userCtrl.modifyUser)
 
 module.exports = router;

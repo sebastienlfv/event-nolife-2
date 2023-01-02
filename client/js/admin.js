@@ -5,13 +5,14 @@ if(token === null) {
 }
 
 const adminOnglet = document.querySelector('.admin')
-adminVerif = localStorage.getItem('isAdmin')
+const adminVerif = localStorage.getItem('isAdmin')
+console.log(adminVerif);
 
-if(adminVerif === 1) {
+if(adminVerif == 1) {
   adminOnglet.style.display = 'flex'
 } else {
   adminOnglet.style.display = 'none'
-  window.location.href = '../index.html'
+  window.location.href = './index.html'
 }
 
 fetchEvent()
@@ -117,6 +118,7 @@ function adminPanel(dataFromApi) {
       const modifyEventContainer = document.createElement('div')
       const modifyButton = document.createElement('button')
       const deleteButton = document.createElement('button')
+      const cancelButton = document.createElement('button')
       adminContainer.appendChild(eventAdminContainer)
       eventAdminContainer.appendChild(titleModify)
       eventAdminContainer.appendChild(shortDescModify)
@@ -144,6 +146,7 @@ function adminPanel(dataFromApi) {
       eventParticipantUpdate.appendChild(optionParticipant10)
       modifyEventContainer.appendChild(modifyButton)
       modifyEventContainer.appendChild(deleteButton)
+      modifyEventContainer.appendChild(cancelButton)
       titleModify.style.paddingTop = '20px'
       titleModify.style.display = 'flex'
       titleModify.style.alignItems = 'center'
@@ -205,6 +208,13 @@ function adminPanel(dataFromApi) {
       deleteButton.innerHTML = 'Supprimer'
       deleteButton.style.marginLeft = '10px'
       deleteButton.style.padding = '10px'
+      cancelButton.innerHTML = 'Annuler'
+      cancelButton.style.marginLeft = '10px'
+      cancelButton.style.padding = '10px'
+
+      cancelButton.addEventListener('click', () => {
+        window.location.href = './admin.html'
+      })
 
       modifyButton.addEventListener('click', () => {
         const urlModify = 'http://localhost:3000/api/evenements' + '/' + dataFromApi[i].id

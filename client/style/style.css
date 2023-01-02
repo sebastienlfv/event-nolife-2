@@ -11,7 +11,6 @@
 #body-home {
   background: url("/client/images/fond-tn.png") no-repeat center center fixed;
   background-size: cover;
-  height: 90vh;
 }
 
 .nav-border {
@@ -77,6 +76,7 @@
 #main-home .profile-container {
   text-align: center;
   margin-top: 180px;
+  margin-bottom: 50px;
 }
 #main-home .profile-container img {
   width: 70px;
@@ -90,7 +90,7 @@
 #main-home .event-container {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 72%;
+  width: 77%;
   padding: 50px;
   display: flex;
   gap: 50px;
@@ -204,6 +204,38 @@
 }
 .admin-container .event-admin-container {
   margin-top: 50px;
+}
+
+.setting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 77%;
+  margin: auto;
+  margin-top: 0;
+  color: #fff;
+  font-family: "Cavilant";
+}
+.setting-container img {
+  width: 130px;
+  margin: inherit !important;
+  margin-top: 50px !important;
+}
+.setting-container .pseudoSetting {
+  font-size: 20px;
+  margin-top: 30px;
+}
+.setting-container .setting-container-details {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 50px;
+}
+.setting-container .setting-container-details-left p:nth-child(1) {
+  margin-bottom: 10px;
+}
+.setting-container .setting-container-details-right p:nth-child(1) {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

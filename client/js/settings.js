@@ -5,9 +5,10 @@ if(token === null) {
 }
 
 const adminOnglet = document.querySelector('.admin')
-adminVerif = localStorage.getItem('isAdmin')
+const adminVerif = localStorage.getItem('isAdmin')
+console.log(adminVerif);
 
-if(adminVerif === 1) {
+if(adminVerif == 1) {
   adminOnglet.style.display = 'flex'
 } else {
   adminOnglet.style.display = 'none'
@@ -37,6 +38,26 @@ function fetchUser() {
     })
     .then(function(dataFromApi) {
       console.log('API', dataFromApi);
+      displayUser(dataFromApi)
     })
     .catch(console.log())
+}
+
+function displayUser(dataFromApi) {
+  const pseudo = document.querySelector('.pseudoSetting')
+  const firstname = document.querySelector('.firstname')
+  const lastname = document.querySelector('.lastname')
+  const email = document.querySelector('.email')
+  const role = document.querySelector('.role')
+  
+  pseudo.innerHTML = dataFromApi.pseudo
+  firstname.innerHTML = 'Prenom: ' + dataFromApi.firstname
+  lastname.innerHTML = 'Nom: ' + dataFromApi.lastname
+  email.innerHTML = 'Email: ' + dataFromApi.email
+
+  if(adminVerif == 1) {
+    role.innerHTML = 'Rôle: Administrateur'
+  } else {
+    role.innerHTML = 'Rôle: Partenaire'
+  }
 }

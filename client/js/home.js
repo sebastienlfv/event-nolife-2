@@ -5,9 +5,10 @@ if(token === null) {
 }
 
 const adminOnglet = document.querySelector('.admin')
-adminVerif = localStorage.getItem('isAdmin')
+const adminVerif = localStorage.getItem('isAdmin')
+console.log(adminVerif);
 
-if(adminVerif === 1) {
+if(adminVerif == 1) {
   adminOnglet.style.display = 'flex'
 } else {
   adminOnglet.style.display = 'none'
