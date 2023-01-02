@@ -4,8 +4,16 @@ if(token === null) {
   window.location.href = '../client/connect.html'
 }
 
+const adminOnglet = document.querySelector('.admin')
+adminVerif = localStorage.getItem('isAdmin')
+
+if(adminVerif === 1) {
+  adminOnglet.style.display = 'flex'
+} else {
+  adminOnglet.style.display = 'none'
+}
+
 fetchEvent()
-adminPanel()
 
 // nav
 
@@ -28,10 +36,12 @@ function fetchEvent() {
     })
     .then(function(dataFromApi) {
       console.log('API', dataFromApi);
-      loadEvent(dataFromApi)
+      loadEvent(dataFromApi);
     })
     .catch(console.log())
 }
+
+// function
 
 function loadEvent(dataFromApi) {
   const eventContainer = document.querySelector('.event-container')
@@ -71,16 +81,5 @@ function loadEvent(dataFromApi) {
         participant.innerHTML = JSON.parse(dataFromApi[i].eventParticipant).length + '/' + dataFromApi[i].eventMaxParticipant
       }
     }
-  }
-}
-
-function adminPanel() {
-  const adminOnglet = document.querySelector('.admin')
-  adminVerif = localStorage.getItem('isAdmin')
-
-  if(adminVerif == 1) {
-    adminOnglet.style.display = 'flex'
-  } else {
-    adminOnglet.style.display = 'none'
   }
 }

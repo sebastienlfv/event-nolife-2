@@ -50,7 +50,7 @@
   background: rgba(255, 255, 255, 0.2);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  width: 25%;
+  width: 300px;
   height: 100%;
 }
 #main-home .navigation-container-link {
@@ -90,21 +90,21 @@
 #main-home .event-container {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 100%;
+  width: 72%;
   padding: 50px;
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
   scroll-behavior: smooth;
   overflow-y: scroll;
-  justify-content: center;
 }
 #main-home .event-container-details {
   background: url("/client/images/banner-csgo.jpg");
   background-size: cover;
   box-shadow: 0px 5px 10px 2px #000;
-  width: 400px;
+  width: 390px;
   height: 100px;
+  padding: 10px;
   display: flex;
   cursor: pointer;
   color: #fff;
@@ -188,6 +188,22 @@
   justify-content: center;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.admin-container {
+  padding: 50px;
+  width: 77%;
+}
+.admin-container h1 {
+  font-family: "Cavilant";
+  color: #fff;
+  font-size: 20px;
+}
+.admin-container-event {
+  margin-top: 50px;
+}
+.admin-container .event-admin-container {
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

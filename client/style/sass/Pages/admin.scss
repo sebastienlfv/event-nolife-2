@@ -1,0 +1,18 @@
+.admin-container {
+  padding: 50px;
+  width: 77%;
+
+  h1 {
+    font-family: 'Cavilant';
+    color: #fff;
+    font-size: 20px;
+  }
+
+  &-event {
+    margin-top: 50px;
+  }
+
+  .event-admin-container {
+    margin-top: 50px;
+  }
+}
