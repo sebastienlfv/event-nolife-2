@@ -60,6 +60,7 @@ function fetchEvent() {
 
 function loadEvent(dataFromApi) {
   const eventContainer = document.querySelector('.event-container')
+  const eventContainerDetails = document.querySelector('.event-details')
   console.log(eventContainer);
 
   for (let i = 0; i < dataFromApi.length; i++) {
@@ -98,7 +99,8 @@ function loadEvent(dataFromApi) {
     }
 
     eventDetails.addEventListener('click', () => {
-      
+      eventContainer.style.display = 'none'
+      eventContainerDetails.style.display = 'flex'
     })
   }
 }

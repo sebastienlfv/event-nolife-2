@@ -92,7 +92,7 @@
   border-bottom-right-radius: 10px;
   width: 77%;
   padding: 50px;
-  display: flex;
+  display: none;
   gap: 50px;
   flex-wrap: wrap;
   scroll-behavior: smooth;
@@ -117,7 +117,38 @@
   margin-top: 15px;
 }
 #main-home .event-details {
-  display: none;
+  font-family: "Cavilant";
+  padding: 50px;
+  width: 64%;
+}
+#main-home .event-details h1 {
+  color: #fff;
+}
+#main-home .event-details p {
+  color: #fff;
+  width: 90%;
+  margin-top: 50px;
+  font-family: "Courier New", Courier, monospace;
+}
+#main-home .event-details div {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+#main-home .event-details div span {
+  color: #fff;
+}
+#main-home .event-details .joinEvent {
+  background-color: red;
+  color: #fff;
+  padding: 10px 40px;
+  margin-top: 40px;
+  cursor: pointer;
+  display: flex;
+  margin: auto;
+  margin-top: 60px;
 }
 
 #body-login {
