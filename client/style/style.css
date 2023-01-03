@@ -116,6 +116,9 @@
 #main-home .event-container-details div .participant {
   margin-top: 15px;
 }
+#main-home .event-details {
+  display: none;
+}
 
 #body-login {
   background: url("/client/images/fond-tn.png") no-repeat center center fixed;
@@ -206,6 +209,76 @@
   margin-top: 50px;
 }
 
+.setting-container-modify {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 77%;
+  margin: auto;
+  margin-top: 0;
+  color: #fff;
+  font-family: "Cavilant";
+}
+.setting-container-modify .error-confirm {
+  margin-top: 20px;
+}
+.setting-container-modify .modifySettings, .setting-container-modify .CancelButton, .setting-container-modify .ValidateSettings {
+  background-color: red;
+  color: #fff;
+  padding: 10px 40px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.setting-container-modify img {
+  width: 130px;
+  margin: inherit !important;
+  margin-top: 50px !important;
+}
+.setting-container-modify .pseudoSetting {
+  font-size: 20px;
+  margin-top: 30px;
+}
+.setting-container-modify .setting-container-details {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 50px;
+}
+.setting-container-modify .setting-container-details #modifyButtons {
+  display: flex;
+  justify-content: center;
+}
+.setting-container-modify .setting-container-details label {
+  margin-right: 10px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  color: gray;
+}
+.setting-container-modify .setting-container-details input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  height: 30px;
+  padding-left: 5px;
+}
+.setting-container-modify .setting-container-details input:focus-visible {
+  outline: none;
+}
+.setting-container-modify .setting-container-details-left {
+  text-align: center;
+}
+.setting-container-modify .setting-container-details-left input:nth-child(1) {
+  margin-bottom: 10px;
+}
+.setting-container-modify .setting-container-details-right {
+  text-align: center;
+}
+.setting-container-modify .setting-container-details-right input:nth-child(1) {
+  margin-bottom: 10px;
+}
+
 .setting-container {
   display: flex;
   flex-direction: column;
@@ -215,6 +288,13 @@
   margin-top: 0;
   color: #fff;
   font-family: "Cavilant";
+}
+.setting-container .modifySettings {
+  background-color: red;
+  color: #fff;
+  padding: 10px 40px;
+  margin-top: 40px;
+  cursor: pointer;
 }
 .setting-container img {
   width: 130px;

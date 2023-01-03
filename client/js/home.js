@@ -18,8 +18,22 @@ fetchEvent()
 
 // nav
 
+
+fetch('http://localhost:3000/api/auth/' + localStorage.getItem('userId')) 
+  .then(function(res) {
+    if(res.ok) {
+      return res.json()
+    }
+  })
+  .then(function(dataUserFromApi) {
+    console.log('user API', dataUserFromApi);
+    pseudoNav.innerHTML = dataUserFromApi.pseudo
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+
 const pseudoNav = document.querySelector('.pseudo')
-pseudoNav.innerHTML = localStorage.getItem('pseudo')
 
 // fetch event
 
@@ -36,7 +50,7 @@ function fetchEvent() {
       }
     })
     .then(function(dataFromApi) {
-      console.log('API', dataFromApi);
+      console.log('API event', dataFromApi);
       loadEvent(dataFromApi);
     })
     .catch(console.log())
@@ -82,5 +96,9 @@ function loadEvent(dataFromApi) {
         participant.innerHTML = JSON.parse(dataFromApi[i].eventParticipant).length + '/' + dataFromApi[i].eventMaxParticipant
       }
     }
+
+    eventDetails.addEventListener('click', () => {
+      
+    })
   }
 }

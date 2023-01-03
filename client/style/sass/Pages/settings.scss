@@ -1,3 +1,84 @@
+.setting-container-modify {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 77%;
+  margin: auto;
+  margin-top: 0;
+  color: #fff;
+  font-family: 'Cavilant';
+
+  .error-confirm {
+    margin-top: 20px;
+  }
+
+  .modifySettings, .CancelButton, .ValidateSettings {
+    background-color: red;
+    color: #fff;
+    padding: 10px 40px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 130px;
+    margin: inherit !important;
+    margin-top: 50px !important;
+  }
+
+  .pseudoSetting {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .setting-container-details {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 50px;
+
+    #modifyButtons {
+      display: flex;
+      justify-content: center;
+    }
+
+    label {
+      margin-right: 10px ;
+      font-family: sans-serif;
+      letter-spacing: 2px;
+      color: gray;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      font-size: 16px;
+      height: 30px;
+      padding-left: 5px;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &-left {
+      text-align: center;
+      input:nth-child(1) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-right {
+      text-align: center;
+      input:nth-child(1) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
 .setting-container {
   display: flex;
   flex-direction: column;
@@ -7,6 +88,14 @@
   margin-top: 0;
   color: #fff;
   font-family: 'Cavilant';
+
+  .modifySettings {
+    background-color: red;
+    color: #fff;
+    padding: 10px 40px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
 
   img {
     width: 130px;
