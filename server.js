@@ -51,7 +51,30 @@ app.use(function(req, res, nexr) {
 })
 
 var io = require('socket.io')(server)
+io.on('connection', (socket) => {
+  
+  socket.on('pseudo', (pseudo) => {
+    socket.pseudo = pseudo;
+    socket.broadcast.emit('newUser', pseudo)
+  })
 
+  socket.on('newMessage', (message) => {
+    socket.broadcast.emit('newMessageAll', { message: message, pseudo: socket.pseudo })
+  })
+
+  socket.on('writting', (pseudo) => {
+    socket.broadcast.emit('writting', pseudo)
+  })
+
+  socket.on('notWritting', () => {
+    socket.broadcast.emit('notWritting')
+  })
+
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('quitUser', socket.pseudo)
+  })
+
+})
 
 
 server.listen(port);

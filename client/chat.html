@@ -22,7 +22,7 @@
             <i class="fa-solid fa-gamepad"></i>
             <p>Event</p>
           </a>
-          <a class="navigation-container-link nav-border">
+          <a href="./chat.html" class="navigation-container-link nav-border">
             <i class="fa-regular fa-message"></i>
             <p>Chat</p>
           </a>
@@ -51,8 +51,8 @@
           </div>
         </div>
         <div id="isWritting"></div>
-        <form method="POST" id="chatForm">
-          <input type="text" id="msgInput" autofocus>
+        <form method="post" id="chatForm">
+          <input type="text" id="msgInput" autofocus onblur="notWritting()" onkeypress="writting()">
           <input type="submit" id="btnSend" value="Envoyer">
         </form>
       </div>

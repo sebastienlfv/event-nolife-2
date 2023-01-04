@@ -381,7 +381,7 @@
 
 .msgContainer {
   width: 75%;
-  height: 70vh;
+  height: 60vh;
   overflow: auto;
   display: flex;
   flex-direction: column;
