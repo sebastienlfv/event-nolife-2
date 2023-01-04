@@ -15,4 +15,16 @@
   .event-admin-container {
     margin-top: 50px;
   }
+
+  .addEvent {
+    background-color: red;
+    color: #fff;
+    padding: 10px 40px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+
+  .add-event-container {
+    display: none;
+  }
 }

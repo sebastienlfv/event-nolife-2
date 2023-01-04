@@ -8,6 +8,7 @@
   <title>NOLIFE - Event</title>
   <link rel="stylesheet" href="./client/style/style.css">
   <script src="./client/js/home.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body id="body-home">
   <main id="main-home">
@@ -16,7 +17,7 @@
         <img src="./client/images/logo-Nolife.webp" alt="" srcset="">
         <span id="border-right"></span>
         <div class="details">
-          <a class="navigation-container-link nav-border">
+          <a href="./index.html" class="navigation-container-link nav-border">
             <i class="fa-solid fa-gamepad"></i>
             <p>Event</p>
           </a>
@@ -42,13 +43,15 @@
         <!-- INJECTED -->
       </div>
       <div class="event-details">
-        <h1 class="eventName">Nom de l'évenement</h1>
-        <p class="eventLongDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi at laborum nemo quos quo nisi cum in laboriosam deleniti eum.</p>
+        <h1 class="eventNameDetails"></h1>
+        <p class="eventLongDescriptionDetails"></p>
         <div>
-          <span class="nombreDeParticipant">Participant: 1/10</span>
-          <span class="particpantMax">Participants Max: 10</span>
+          <span class="nombreDeParticipantDetails"></span>
+          <span class="participantMaxDetails"></span>
         </div>
-        <button class="joinEvent">Rejoindre l'évements</button>
+        <button class="joinEvent">Rejoindre l'évèment</button>
+        <button class="leaveEvent">Quitter l'évèment</button>
+        <button class="eventFull">Évènement complet !</button>
       </div>
     </section>
   </main>

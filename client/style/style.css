@@ -92,7 +92,7 @@
   border-bottom-right-radius: 10px;
   width: 77%;
   padding: 50px;
-  display: none;
+  display: flex;
   gap: 50px;
   flex-wrap: wrap;
   scroll-behavior: smooth;
@@ -120,6 +120,7 @@
   font-family: "Cavilant";
   padding: 50px;
   width: 64%;
+  display: none;
 }
 #main-home .event-details h1 {
   color: #fff;
@@ -140,7 +141,7 @@
 #main-home .event-details div span {
   color: #fff;
 }
-#main-home .event-details .joinEvent {
+#main-home .event-details button, #main-home .event-details .joinEvent {
   background-color: red;
   color: #fff;
   padding: 10px 40px;
@@ -149,6 +150,12 @@
   display: flex;
   margin: auto;
   margin-top: 60px;
+}
+#main-home .event-details .leaveEvent {
+  display: none;
+}
+#main-home .event-details .eventFull {
+  display: none;
 }
 
 #body-login {
@@ -238,6 +245,16 @@
 }
 .admin-container .event-admin-container {
   margin-top: 50px;
+}
+.admin-container .addEvent {
+  background-color: red;
+  color: #fff;
+  padding: 10px 40px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.admin-container .add-event-container {
+  display: none;
 }
 
 .setting-container-modify {

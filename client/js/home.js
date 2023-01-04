@@ -18,7 +18,6 @@ fetchEvent()
 
 // nav
 
-
 fetch('http://localhost:3000/api/auth/' + localStorage.getItem('userId')) 
   .then(function(res) {
     if(res.ok) {
@@ -91,7 +90,7 @@ function loadEvent(dataFromApi) {
     calculPlayer()
 
     function calculPlayer() {
-      if (dataFromApi[i].eventParticipant == null) {
+      if (dataFromApi[i].eventParticipant == '[]' || null) {
         participant.innerHTML = '0/' + dataFromApi[i].eventMaxParticipant
       } else {
         participant.innerHTML = JSON.parse(dataFromApi[i].eventParticipant).length + '/' + dataFromApi[i].eventMaxParticipant
@@ -100,7 +99,82 @@ function loadEvent(dataFromApi) {
 
     eventDetails.addEventListener('click', () => {
       eventContainer.style.display = 'none'
-      eventContainerDetails.style.display = 'flex'
+      eventContainerDetails.style.display = 'block'
+
+      const eventName = document.querySelector('.eventNameDetails')
+      const eventLongDescription = document.querySelector('.eventLongDescriptionDetails')
+      const nbParticipant = document.querySelector('.nombreDeParticipantDetails')
+      const participantMax = document.querySelector('.participantMaxDetails')
+      const joinEvent = document.querySelector('.joinEvent')
+      const eventFull = document.querySelector('.eventFull')
+      const leaveEvent = document.querySelector('.leaveEvent')
+      const userId = localStorage.getItem('userId')
+
+      eventName.innerHTML = dataFromApi[i].eventName
+      eventLongDescription.innerHTML = dataFromApi[i].eventLongDescription
+      participantMax.innerHTML = 'Participant max: ' + dataFromApi[i].eventMaxParticipant
+
+      if (dataFromApi[i].eventParticipant == '[]' || null) {
+        nbParticipant.innerHTML = 'Nombre de participant: 0/' + dataFromApi[i].eventMaxParticipant
+      } else {
+        nbParticipant.innerHTML = JSON.parse(dataFromApi[i].eventParticipant).length + '/' + dataFromApi[i].eventMaxParticipant
+      }
+
+      if (JSON.parse(dataFromApi[i].eventParticipant).length == dataFromApi[i].eventMaxParticipant) {
+        joinEvent.style.display = 'none'
+        eventFull.style.display = 'flex'
+        console.log('eventFull',(JSON.parse(dataFromApi[i].eventParticipant).length == dataFromApi[i].eventMaxParticipant));
+      }
+
+      if (JSON.parse(dataFromApi[i].eventParticipant.includes(userId))) {
+        joinEvent.style.display = 'none'
+        eventFull.style.display = 'none'
+        leaveEvent.style.display = 'flex'
+        console.log("inEvent", JSON.parse(dataFromApi[i].eventParticipant.includes(userId)));
+      }
+
+      joinEvent.addEventListener('click', (action) => {
+        const userId = localStorage.getItem('userId')
+        const eventId = dataFromApi[i].id
+        const payload = {
+          userId: userId,
+          isJoinOrLeave: action
+        }
+        const urlEvent = 'http://localhost:3000/api/evenements/' + eventId + '/joinEvent'
+        const header = { headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')}}
+
+
+        axios.post(urlEvent, payload, header)
+          .then(() => {
+            calculPlayer()
+            window.location.href = '../index.html'
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      })
+
+      leaveEvent.addEventListener('click', () => {
+        const userId = localStorage.getItem('userId')
+        const eventId = dataFromApi[i].id
+        const payload = {
+          userId: userId
+        }
+
+        const urlEventLeave = 'http://localhost:3000/api/evenements/' + eventId + '/leaveEvent'
+        const header = { headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')}}
+
+        axios.post(urlEventLeave, payload, header)
+          .then(() => {
+            calculPlayer()
+            window.location.href = '../index.html'
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      })
     })
   }
 }
