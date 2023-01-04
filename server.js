@@ -39,20 +39,19 @@ const errorHandler = error => {
   }
 };
 
-// io
-const io = require('socket.io').listen(server)
-io.on('connection', (socket) => {
-  socket.on('pseudo', (pseudo) => {
-    socket.pseudo = pseudo
-    socket.broadcast.emit('newUser', pseudo)
-  })
-})
-
 server.on('error', errorHandler);
 server.on('listening', () => {
   const address = server.address();
   const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
   console.log('Listening on ' + bind);
 });
+
+app.use(function(req, res, nexr) {
+  res.setHeader('Content-Type', 'text/html');
+})
+
+var io = require('socket.io')(server)
+
+
 
 server.listen(port);

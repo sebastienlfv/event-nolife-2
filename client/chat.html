@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a143a2c033.js" crossorigin="anonymous"></script>
+  <title>NOLIFE - Chat</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="./js/chat.js" defer></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body id="body-home">
+  <main id="main-home">
+    <section class="container">
+      <div class="navigation-container">
+        <img src="./images/logo-Nolife.webp" alt="" srcset="">
+        <span id="border-right"></span>
+        <div class="details">
+          <a href="../index.html" class="navigation-container-link nav-border-bis">
+            <i class="fa-solid fa-gamepad"></i>
+            <p>Event</p>
+          </a>
+          <a class="navigation-container-link nav-border">
+            <i class="fa-regular fa-message"></i>
+            <p>Chat</p>
+          </a>
+          <a href="./admin.html" class="navigation-container-link nav-border-bis admin">
+            <i class="fa-solid fa-lock"></i>
+            <p>Admin</p>
+          </a>
+          <a href="./reglages.html" class="navigation-container-link nav-border-bis">
+            <i class="fa-solid fa-gear"></i>
+            <p>Réglages</p>
+          </a>
+        </div>
+        <div class="profile-container">
+          <img src="./images/user.png">
+          <p class="pseudo"></p>
+        </div>
+      </div>
+      <div class="app">
+        <h1 class="chatTitle">Bienvenue sur le chat</h1>
+        <div class="container">
+          <div class="channelList">
+            <h1>Liste des channels</h1>
+          </div>
+          <div class="msgContainer" id="msgContainer">
+
+          </div>
+        </div>
+        <div id="isWritting"></div>
+        <form method="POST" id="chatForm">
+          <input type="text" id="msgInput" autofocus>
+          <input type="submit" id="btnSend" value="Envoyer">
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
