@@ -118,7 +118,7 @@
 #main-home .event-details {
   font-family: "Cavilant";
   padding: 50px;
-  width: 64%;
+  width: 68%;
   display: none;
 }
 #main-home .event-details h1 {
@@ -131,14 +131,15 @@
   font-family: "Courier New", Courier, monospace;
 }
 #main-home .event-details div {
-  width: 80%;
-  margin: auto;
   display: flex;
-  justify-content: space-between;
   margin-top: 50px;
+  flex-direction: column;
 }
 #main-home .event-details div span {
   color: #fff;
+}
+#main-home .event-details div .participantMaxDetails {
+  margin-top: 20px;
 }
 #main-home .event-details button, #main-home .event-details .joinEvent {
   background-color: red;
@@ -147,14 +148,15 @@
   margin-top: 40px;
   cursor: pointer;
   display: flex;
-  margin: auto;
-  margin-top: 60px;
 }
 #main-home .event-details .leaveEvent {
   display: none;
 }
 #main-home .event-details .eventFull {
   display: none;
+  color: red;
+  font-family: "Cavilant";
+  font-weight: bold;
 }
 
 #body-login {

@@ -117,7 +117,7 @@ function loadEvent(dataFromApi) {
       if (dataFromApi[i].eventParticipant == '[]' || null) {
         nbParticipant.innerHTML = 'Nombre de participant: 0/' + dataFromApi[i].eventMaxParticipant
       } else {
-        nbParticipant.innerHTML = JSON.parse(dataFromApi[i].eventParticipant).length + '/' + dataFromApi[i].eventMaxParticipant
+        nbParticipant.innerHTML = 'Nombre de participant: ' + JSON.parse(dataFromApi[i].eventParticipant).length+ '/' + dataFromApi[i].eventMaxParticipant
       }
 
       if (JSON.parse(dataFromApi[i].eventParticipant).length == dataFromApi[i].eventMaxParticipant) {

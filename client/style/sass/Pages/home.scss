@@ -125,7 +125,7 @@
   .event-details {
     font-family: 'Cavilant';
     padding: 50px;
-    width: 64%;
+    width: 68%;
     display: none;
 
     h1 {
@@ -140,14 +140,16 @@
     }
 
     div {
-      width: 80%;
-      margin: auto;
       display: flex;
-      justify-content: space-between;
       margin-top: 50px;
+      flex-direction: column;
       
       span {
         color: #fff;
+      }
+
+      .participantMaxDetails {
+        margin-top: 20px;
       }
     }
 
@@ -158,8 +160,6 @@
       margin-top: 40px;
       cursor: pointer;
       display: flex;
-      margin: auto;
-      margin-top: 60px;
     }
 
     .leaveEvent {
@@ -168,6 +168,9 @@
 
     .eventFull {
       display: none;
+      color: red;
+      font-family: 'Cavilant';
+      font-weight: bold;
     }
   }
 }
