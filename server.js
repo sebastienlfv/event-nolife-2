@@ -46,7 +46,7 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-app.use(function(req, res, nexr) {
+app.use(function(req, res, next) {
   res.setHeader('Content-Type', 'text/html');
 })
 

@@ -1,3 +1,6 @@
+const URL = 'http://localhost:'
+const PORT = 3000
+
 // security
 const token = localStorage.getItem('token')
 if(token === null) {
@@ -18,7 +21,7 @@ fetchEvent()
 
 // nav
 
-fetch('http://localhost:3000/api/auth/' + localStorage.getItem('userId')) 
+fetch( URL + PORT + '/api/auth/' + localStorage.getItem('userId')) 
   .then(function(res) {
     if(res.ok) {
       return res.json()
@@ -40,7 +43,7 @@ const pseudoNav = document.querySelector('.pseudo')
 //   Authorization: 'Bearer ' + localStorage.getItem('token')}}
 
 function fetchEvent() {
-  const urlEvent = 'http://localhost:3000/api/evenements/'
+  const urlEvent = URL + PORT + '/api/evenements/'
 
   fetch(urlEvent)
     .then(function(res) {
@@ -140,7 +143,7 @@ function loadEvent(dataFromApi) {
           userId: userId,
           isJoinOrLeave: action
         }
-        const urlEvent = 'http://localhost:3000/api/evenements/' + eventId + '/joinEvent'
+        const urlEvent = URL + PORT + '/api/evenements/' + eventId + '/joinEvent'
         const header = { headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token')}}
 
@@ -162,7 +165,7 @@ function loadEvent(dataFromApi) {
           userId: userId
         }
 
-        const urlEventLeave = 'http://localhost:3000/api/evenements/' + eventId + '/leaveEvent'
+        const urlEventLeave = URL + PORT + '/api/evenements/' + eventId + '/leaveEvent'
         const header = { headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token')}}
 

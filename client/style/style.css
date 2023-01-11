@@ -140,6 +140,7 @@
 }
 #main-home .event-details div .participantMaxDetails {
   margin-top: 20px;
+  color: gray;
 }
 #main-home .event-details button, #main-home .event-details .joinEvent {
   background-color: red;
