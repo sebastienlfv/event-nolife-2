@@ -11,10 +11,10 @@ function login() {
 
   const URL = 'http://localhost:3000/api/auth/login'
 
-  const payload = {
-    email: email,
-    password: password
-  }
+  // const payload = {
+  //   email: email,
+  //   password: password
+  // }
 
   // axios.post(URL, payload)
   // .then(() => {

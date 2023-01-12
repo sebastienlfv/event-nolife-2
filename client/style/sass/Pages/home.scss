@@ -88,6 +88,10 @@
     }
   }
 
+  .event-container::-webkit-scrollbar {
+    width: 0px;
+  }
+
   .event-container {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;

@@ -1,3 +1,6 @@
+const URL = 'http://localhost:'
+const PORT = 3000
+
 // security
 const token = localStorage.getItem('token')
 if(token === null) {
@@ -18,7 +21,7 @@ fetchUser()
 
 // nav
 
-fetch('http://localhost:3000/api/auth/' + localStorage.getItem('userId')) 
+fetch(URL + PORT + '/api/auth/' + localStorage.getItem('userId')) 
   .then(function(res) {
     if(res.ok) {
       return res.json()
@@ -41,7 +44,7 @@ const pseudoNav = document.querySelector('.pseudo')
 
 function fetchUser() {
   const userId = localStorage.getItem('userId')
-  const urlUser = 'http://localhost:3000/api/auth/' + userId
+  const urlUser = URL + PORT + '/api/auth/' + userId
 
   fetch(urlUser)
     .then(function(res) {
@@ -100,7 +103,7 @@ const nomInput = document.querySelector('.input-nom')
 
 modifySettings.addEventListener('click', () => {
   const userId = localStorage.getItem('userId')
-  const urlSettings = 'http://localhost:3000/api/auth/' + userId
+  const urlSettings = URL + PORT + '/api/auth/' + userId
   const errorConfirm = document.querySelector('.error-confirm')
   
   const payload = {

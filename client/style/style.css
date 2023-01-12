@@ -86,6 +86,9 @@
   padding-top: 20px;
   font-family: "Cavilant";
 }
+#main-home .event-container::-webkit-scrollbar {
+  width: 0px;
+}
 #main-home .event-container {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -244,9 +247,9 @@
 }
 .admin-container-event {
   margin-top: 50px;
-}
-.admin-container .event-admin-container {
-  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .admin-container .addEvent {
   background-color: red;
@@ -371,15 +374,12 @@
 .app {
   width: 100%;
   height: 100%;
-  background-color: rgb(48, 44, 44);
-  top: 0;
-  left: 0;
 }
 
 .container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .msgContainer {
@@ -395,6 +395,7 @@
   margin: 25px 0 50px 0;
   color: white;
   margin-right: 10px;
+  font-family: "Cavilant";
 }
 
 /* user typing */
@@ -404,11 +405,14 @@
 }
 
 /* form */
+.msgContainer::-webkit-scrollbar {
+  width: 0px;
+}
+
 .app > form {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  margin-left: 20%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 form > input[type=text] {
@@ -416,11 +420,16 @@ form > input[type=text] {
   width: 50%;
   height: 35px;
   border: none;
+  background-color: #323232;
+  border-radius: 5px;
+  color: #fff;
+  padding-left: 5px;
 }
 
 form > input[type=submit] {
   padding: 9px;
   border: none;
+  margin-left: 10px;
 }
 
 /* User comes and quit */
@@ -437,26 +446,26 @@ form > input[type=submit] {
 /* Messages */
 .message {
   border: none;
-  border-radius: 10px;
   font-size: 20px;
   padding: 10px;
   max-width: 45%;
+  font-family: sans-serif;
+  color: #fff;
+  margin-top: 5px;
 }
 
 .newMessageMe {
-  background-color: rgb(77, 155, 243);
+  border-right: 1px solid red;
   margin-left: 55%;
-  margin-top: 2%;
+  text-align: right;
 }
 
 .newMessageAll {
-  background-color: rgb(204, 211, 211);
-  margin-top: 2%;
+  border-left: 1px solid red;
 }
 
 .whisper {
-  background-color: rgb(235, 14, 14);
-  margin-top: 2%;
+  border-left: 1px solid #fff;
 }
 
 /* Messages from databse */
@@ -493,6 +502,71 @@ form > input[type=submit] {
 .inChannel {
   background-color: rgb(105, 105, 105);
   transition: 0.5s;
+}
+
+.addEventContainerDetails {
+  margin-top: 50px;
+}
+.addEventContainerDetails .titleAdd {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.addEventContainerDetails .titleAdd .titleEvent {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+}
+.addEventContainerDetails .shortDescAdd {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.addEventContainerDetails .shortDescAdd .shortDescEvent {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+}
+.addEventContainerDetails .shortDescAdd .shortDescArea {
+  width: 210px;
+  height: 60px;
+  padding: 10px;
+}
+.addEventContainerDetails .longDescAdd {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.addEventContainerDetails .longDescAdd .longDescEvent {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+}
+.addEventContainerDetails .longDescAdd .longDescArea {
+  width: 250px;
+  height: 100px;
+  padding: 10px;
+}
+.addEventContainerDetails .eventParticipantAdd {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.addEventContainerDetails .eventParticipantAdd .eventParticipant {
+  color: #fff;
+  margin-right: 30px;
+}
+.addEventContainerDetails .eventParticipantAdd .eventParticipantUpdate {
+  padding: 5px;
+}
+.addEventContainerDetails .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.addEventContainerDetails .buttons button {
+  padding: 10px;
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

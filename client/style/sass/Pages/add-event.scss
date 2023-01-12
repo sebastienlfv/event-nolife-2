@@ -1,0 +1,77 @@
+.addEventContainerDetails {
+  margin-top: 50px;
+
+  .titleAdd {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .titleEvent {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 15px;
+    }
+  }
+
+  .shortDescAdd {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .shortDescEvent {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 15px;
+    }
+
+    .shortDescArea {
+      width: 210px;
+      height: 60px;
+      padding: 10px;
+    }
+  }
+
+  .longDescAdd {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .longDescEvent {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 15px;
+    }
+
+    .longDescArea {
+      width: 250px;
+      height: 100px;
+      padding: 10px;
+    }
+  }
+
+  .eventParticipantAdd {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .eventParticipant {
+      color: #fff;
+      margin-right: 30px;
+    }
+
+    .eventParticipantUpdate {
+      padding: 5px;
+    }
+  }
+
+  .buttons {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;
+    
+    button {
+      padding: 10px;
+      margin-top: 50px;
+    }
+  }
+}

@@ -8,7 +8,7 @@ const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.
   dialect: 'mysql'
 })
 
-const userSchema = sequelize.define('User', {
+const userSchema = sequelize.define('users', {
   pseudo: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -56,5 +56,5 @@ const userSchema = sequelize.define('User', {
 }, {timestamps: false}
 )
 
-const userModel = sequelize.model('User', userSchema)
+const userModel = sequelize.model('users', userSchema)
 module.exports = userModel

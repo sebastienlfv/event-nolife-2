@@ -1,9 +1,19 @@
+const token = localStorage.getItem('token')
+if(token === null) {
+  window.location.href = '../client/connect.html'
+}
+
 var socket = io.connect('http://localhost:3000/')
 const userId = localStorage.getItem('userId')
 
 fetchUser()
 
 const pseudoNav = document.querySelector('.pseudo')
+
+function scrollToBottom() {
+  const el = document.getElementById("msgContainer");
+    el.scrollTop = el.scrollHeight;
+}
 
 function fetchUser() {
   fetch('http://localhost:3000/api/auth/' + localStorage.getItem('userId')) 
@@ -29,6 +39,8 @@ function fetchUser() {
       if(textInput.length > 0) {
         socket.emit('newMessage', textInput)
         createElementFunction('newMessageMe', textInput)
+        scrollToBottom()
+        
       } else {
         return false
       }
@@ -38,10 +50,12 @@ function fetchUser() {
 
     socket.on('newUser', (pseudo) => {
       createElementFunction('newUser', pseudo)
+      scrollToBottom()
     })
 
     socket.on('newMessageAll', (content) => {
       createElementFunction('newMessageAll', content)
+      scrollToBottom()
     })
 
     socket.on('writting', (pseudo) => {
@@ -54,6 +68,7 @@ function fetchUser() {
 
     socket.on('quitUser', (pseudo) => {
       createElementFunction('quitUser', pseudo)
+      scrollToBottom()
     })
 
     // FUNCTIONS
@@ -80,13 +95,13 @@ function fetchUser() {
 
         case 'newMessageMe':
           newElement.classList.add(element, 'message')
-          newElement.innerHTML = pseudo + ': ' + content
+          newElement.innerHTML = pseudo + ' : ' + content
           document.getElementById('msgContainer').appendChild(newElement)
           break;
 
         case 'newMessageAll':
           newElement.classList.add(element, 'message')
-          newElement.innerHTML = content.pseudo + ': ' + content.message
+          newElement.innerHTML = content.pseudo + ' : ' + content.message
           document.getElementById('msgContainer').appendChild(newElement)
           break;
 

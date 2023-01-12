@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a143a2c033.js" crossorigin="anonymous"></script>
+  <title>NOLIFE - Admin</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="./js/add-event.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body id="body-home">
+  <main id="main-home">
+    <section class="container">
+      <div class="navigation-container">
+        <img src="./images/logo-Nolife.webp" alt="" srcset="">
+        <span id="border-right"></span>
+        <div class="details">
+          <a href="../index.html" class="navigation-container-link nav-border-bis">
+            <i class="fa-solid fa-gamepad"></i>
+            <p>Event</p>
+          </a>
+          <a href="./chat.html" class="navigation-container-link nav-border-bis">
+            <i class="fa-regular fa-message"></i>
+            <p>Chat</p>
+          </a>
+          <a href="./admin.html" class="navigation-container-link nav-border admin">
+            <i class="fa-solid fa-lock"></i>
+            <p>Admin</p>
+          </a>
+          <a href="./reglages.html" class="navigation-container-link nav-border-bis">
+            <i class="fa-solid fa-gear"></i>
+            <p>Réglages</p>
+          </a>
+        </div>
+        <div class="profile-container">
+          <img src="./images/user.png">
+          <p class="pseudo"></p>
+        </div>
+      </div>
+      <div class="admin-container">
+        <h1>Pannel d'administration des événements nolife</h1>
+        <div class="addEventContainerDetails">
+          <div class="titleAdd">
+            <h1 class="titleEvent">Nom de l'évènement</h1>
+            <input type="text" class="titleInput">
+          </div>
+          <div class="shortDescAdd">
+            <p class="shortDescEvent">Courte description</p>
+            <textarea class="shortDescArea"></textarea>
+          </div>
+          <div class="longDescAdd">
+            <p class="longDescEvent">Description</p>
+            <textarea class="longDescArea"></textarea>
+          </div>
+          <div class="eventParticipantAdd">
+            <p class="eventParticipant">Nombre de participant</p>
+            <select class="eventPartcipantUpdate">
+              <option disabled class="optionParticipant">Nombre de participant</option>
+              <option value="1" class="optionParticipant1">1</option>
+              <option value="2" class="optionParticipant2">2</option>
+              <option value="3" class="optionParticipant3">3</option>
+              <option value="4" class="optionParticipant4">4</option>
+              <option value="5" class="optionParticipant5">5</option>
+              <option value="6" class="optionParticipant6">6</option>
+              <option value="7" class="optionParticipant7">7</option>
+              <option value="8" class="optionParticipant8">8</option>
+              <option value="9" class="optionParticipant9">9</option>
+              <option value="10" class="optionParticipant10">10</option>
+            </select>
+          </div>
+          <div class="buttons">
+            <button class="addButton">Ajouter l'évènement</button>
+            <button class="cancelEvent">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

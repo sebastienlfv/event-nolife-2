@@ -10,10 +10,9 @@
 
   &-event {
     margin-top: 50px;
-  }
-
-  .event-admin-container {
-    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   .addEvent {

@@ -1,3 +1,6 @@
+const URL = 'http://localhost:'
+const PORT = 3000
+
 // security
 const token = localStorage.getItem('token')
 if(token === null) {
@@ -19,7 +22,7 @@ fetchEvent()
 
 // nav
 
-fetch('http://localhost:3000/api/auth/' + localStorage.getItem('userId')) 
+fetch(URL + PORT + '/api/auth/' + localStorage.getItem('userId')) 
   .then(function(res) {
     if(res.ok) {
       return res.json()
@@ -41,7 +44,7 @@ const pseudoNav = document.querySelector('.pseudo')
 //   Authorization: 'Bearer ' + localStorage.getItem('token')}}
 
 function fetchEvent() {
-  const urlEvent = 'http://localhost:3000/api/evenements/'
+  const urlEvent = URL + PORT + '/api/evenements/'
 
   fetch(urlEvent)
     .then(function(res) {
@@ -101,164 +104,18 @@ function adminPanel(dataFromApi) {
     const addEvent = document.querySelector('.addEvent')
 
     addEvent.addEventListener('click', () => {
-      const addEventContainer = document.querySelector('.add-event-container')
-
-      adminContainerEvent.style.display = 'none'
-      addEventContainer.style.display = 'flex'
-      addEvent.style.display = 'none'
-      
-      const addEventContainerDetails = document.createElement('div')
-      const titleAdd = document.createElement('div')
-      const titleEvent = document.createElement('h1')
-      const titleInput = document.createElement('input')
-      const shortDescAdd = document.createElement('div')
-      const shortDescEvent = document.createElement('p')
-      const shortDescArea = document.createElement('textarea')
-      const longDescAdd = document.createElement('div')
-      const longDescEvent = document.createElement('p')
-      const longDescArea = document.createElement('textarea')
-      const eventParticipantAdd = document.createElement('div')
-      const eventParticipant = document.createElement('p')
-      const eventParticipantUpdate = document.createElement('select')
-      const optionParticipant = document.createElement('option')
-      const optionParticipant1 = document.createElement('option')
-      const optionParticipant2 = document.createElement('option')
-      const optionParticipant3 = document.createElement('option')
-      const optionParticipant4 = document.createElement('option')
-      const optionParticipant5 = document.createElement('option')
-      const optionParticipant6 = document.createElement('option')
-      const optionParticipant7 = document.createElement('option')
-      const optionParticipant8 = document.createElement('option')
-      const optionParticipant9 = document.createElement('option')
-      const optionParticipant10 = document.createElement('option')
-      const addButton = document.createElement('button')
-      
-      addEventContainer.appendChild(addEventContainerDetails)
-      addEventContainerDetails.appendChild(titleAdd)
-      addEventContainerDetails.appendChild(shortDescAdd)
-      addEventContainerDetails.appendChild(longDescAdd)
-      addEventContainerDetails.appendChild(eventParticipantAdd)
-      addEventContainerDetails.appendChild(addButton)
-      titleAdd.appendChild(titleEvent)
-      titleAdd.appendChild(titleInput)
-      shortDescAdd.appendChild(shortDescEvent)
-      shortDescAdd.appendChild(shortDescArea)
-      longDescAdd.appendChild(longDescEvent)
-      longDescAdd.appendChild(longDescArea)
-      eventParticipantAdd.appendChild(eventParticipant)
-      eventParticipantAdd.appendChild(eventParticipantUpdate)
-      eventParticipantUpdate.appendChild(optionParticipant)
-      eventParticipantUpdate.appendChild(optionParticipant1)
-      eventParticipantUpdate.appendChild(optionParticipant2)
-      eventParticipantUpdate.appendChild(optionParticipant3)
-      eventParticipantUpdate.appendChild(optionParticipant4)
-      eventParticipantUpdate.appendChild(optionParticipant5)
-      eventParticipantUpdate.appendChild(optionParticipant6)
-      eventParticipantUpdate.appendChild(optionParticipant7)
-      eventParticipantUpdate.appendChild(optionParticipant8)
-      eventParticipantUpdate.appendChild(optionParticipant9)
-      eventParticipantUpdate.appendChild(optionParticipant10)
-
-      addEventContainerDetails.style.marginTop = '50px'
-      titleAdd.style.display = 'flex'
-      titleAdd.style.alignItems = 'center'
-      titleAdd.style.marginTop = '20px'
-      titleEvent.innerHTML = "Nom de l'évenement"
-      titleEvent.style.color = '#fff'
-      titleEvent.style.fontSize = '20px'
-      titleEvent.style.marginRight = '15px'
-      shortDescAdd.style.display = 'flex'
-      shortDescAdd.style.alignItems = 'center'
-      shortDescAdd.style.marginTop = '20px'
-      shortDescEvent.innerHTML = 'Courte description'
-      shortDescEvent.style.color = '#fff'
-      shortDescEvent.style.fontSize = '20px'
-      shortDescEvent.style.marginRight = '15px'
-      shortDescArea.style.width = '210px'
-      shortDescArea.style.height = '60px'
-      shortDescArea.style.padding = '10px'
-      longDescAdd.style.display = 'flex'  
-      longDescAdd.style.alignItems = 'center'
-      longDescAdd.style.marginTop = '20px'   
-      longDescEvent.innerHTML = 'Description longue'
-      longDescEvent.style.color = '#fff'
-      longDescEvent.style.fontSize = '20px'
-      longDescEvent.style.marginRight = '15px'    
-      longDescArea.style.width = '250px'
-      longDescArea.style.height = '100px'
-      longDescArea.style.padding = '10px'
-      eventParticipantAdd.style.marginTop = '20px'
-      eventParticipantAdd.style.display = 'flex'
-      eventParticipantAdd.style.alignItems = 'center'
-      eventParticipant.style.color = '#fff'
-      eventParticipant.style.marginRight = '30px'
-      eventParticipantUpdate.style.padding = '5px'
-      eventParticipant.innerHTML = 'Nombre de participant'
-      optionParticipant.innerHTML = 'Nombre de participant'
-      optionParticipant.disabled = true
-      optionParticipant1.innerHTML = '1'
-      optionParticipant1.value = '1'
-      optionParticipant2.innerHTML = '2'
-      optionParticipant2.value = '2'
-      optionParticipant3.innerHTML = '3'
-      optionParticipant3.value = '3'
-      optionParticipant4.innerHTML = '4'
-      optionParticipant4.value = '4'
-      optionParticipant5.innerHTML = '5'
-      optionParticipant5.value = '5'
-      optionParticipant6.innerHTML = '6'
-      optionParticipant6.value = '6'
-      optionParticipant7.innerHTML = '7'
-      optionParticipant7.value = '7'
-      optionParticipant8.innerHTML = '8'
-      optionParticipant8.value = '8'
-      optionParticipant9.innerHTML = '9'
-      optionParticipant9.value = '9'
-      optionParticipant10.innerHTML = '10'
-      optionParticipant10.value = '10'
-      addButton.style.display = 'flex'
-      addButton.innerHTML = "Ajouter l'évenement"
-      addButton.style.padding = '10px'
-      addButton.style.alignContent = 'center'
-      addButton.style.margin = 'auto'
-      addButton.style.marginTop = '50px'
-      
-      addButton.addEventListener('click', () => {
-        const urlEvent = 'http://localhost:3000/api/evenements'
-        const titleValue = titleInput.value
-        const shortDescValue = shortDescArea.value
-        const longDescValue = longDescArea.value
-        const participantValue = eventParticipantUpdate.value
-
-        const header = { headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token'),
-        }}
-
-        const payload = {
-          eventName: titleValue,
-          eventDescription: shortDescValue,
-          eventLongDescription: longDescValue,
-          eventMaxParticipant: participantValue
-        }
-        
-        axios.post(urlEvent, payload, header)
-        .then(() => {
-          window.location.href = '../index.html'
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-
-      })
+      window.location.href = './add-event.html'
     })
 
     eventDetails.addEventListener('click', () => {
+      addEvent.style.display = 'none'
       adminContainerEvent.style.display = "none"
 
       document.title = 'NOLIFE - ' + dataFromApi[i].eventName
       const adminContainer = document.querySelector('.admin-container')
       const eventAdminContainer = document.createElement('div')
       eventAdminContainer.className = 'event-admin-container'
+      eventAdminContainer.style.marginTop = '50px'
       const titleModify = document.createElement('div')
       const titleEvent = document.createElement('h1')
       const titleInput = document.createElement('input')
@@ -384,7 +241,7 @@ function adminPanel(dataFromApi) {
       })
 
       modifyButton.addEventListener('click', () => {
-        const urlModify = 'http://localhost:3000/api/evenements' + '/' + dataFromApi[i].id
+        const urlModify = URL + PORT + '/api/evenements' + '/' + dataFromApi[i].id
         const titleValue = titleInput.value
         const shortDescValue = shortDescArea.value
         const longDescValue = longDescArea.value
@@ -411,7 +268,7 @@ function adminPanel(dataFromApi) {
       })
 
       deleteButton.addEventListener('click', () => {
-        const urlDelete = 'http://localhost:3000/api/evenements' + '/' + dataFromApi[i].id
+        const urlDelete = URL + PORT + '/api/evenements' + '/' + dataFromApi[i].id
         const header = { headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')}}
         
