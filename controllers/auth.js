@@ -21,23 +21,25 @@ module.exports.register = async (req, res) => {
     .then(function(userFound) {
       if(!userFound) {
         bcrypt.hash(password, 10, function(err, hash) {
+          let userId = Math.floor(Math.random() * 1000000).toString().padStart(7, '0');
           let newUser = User.create({
             pseudo: pseudo,
             firstname: firstname,
             lastname: lastname,
             email: email,
-            password: hash
+            password: hash,
+            userId: userId
           })
-            .then(function(newUser) {
-              return res.status(201).json({
-                'userId': newUser.id
-              })
-          })
-            .catch(function(err) {
-              return res.status(500).json({
-                error: 'cannot add user'
-              })
+          .then(function(newUser) {
+            return res.status(201).json({
+              'userId': newUser.userId
             })
+          })
+          .catch(function(err) {
+            return res.status(500).json({
+              error: 'cannot add user'
+            })
+          })
         })
       } else {
         return res.status(409).json({
@@ -68,9 +70,9 @@ module.exports.login = async (req, res) => {
         bcrypt.compare(password, userFound.password, function(errHash, resHash){
           if(resHash) {
             return res.status(200).json({
-              'userId': userFound.id,
+              'userId': userFound.userId,
               'token': jwt.sign(
-                { userId: userFound.id },
+                { userId: userFound.userId },
                 'RANDOM_TOKEN_SECRET',
                 { expiresIn: '1h' }
               ),

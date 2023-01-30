@@ -9,6 +9,11 @@ const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.
 })
 
 const userSchema = sequelize.define('users', {
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    unique: true
+  },
   pseudo: {
     type: DataTypes.STRING,
     allowNull: false,

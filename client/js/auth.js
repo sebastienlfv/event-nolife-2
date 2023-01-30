@@ -39,7 +39,6 @@ function login() {
   xhttp.onreadystatechange = function() {
     if(this.status === 200) {
       const response = JSON.parse(this.responseText)
-      console.log(response)
       localStorage.setItem('email', response.email)
       localStorage.setItem('token', response.token)
       localStorage.setItem('userId', response.userId)

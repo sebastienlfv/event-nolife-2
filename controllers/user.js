@@ -1,7 +1,7 @@
 const User = require('../models/user')
 
 module.exports.getOneUser = async (req, res) => {
-  User.findOne({ where: { id: req.params.id }})
+  User.findOne({ where: { userId: req.params.id }})
     .then(user => res.status(200).json(user))
     .catch(err => res.status(400).json(err))
 }
