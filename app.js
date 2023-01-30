@@ -19,9 +19,9 @@ const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.
 
 sequelize.authenticate()
   .then(() => {
-    console.log("Connexion à la BDD");
+    console.log("Connexion à la BDD MYSQL");
   }).catch(() => {
-  console.log("Connexion à la BDD raté");
+  console.log("Connexion à la BDD MYSQL raté");
 })
 
 // CORS

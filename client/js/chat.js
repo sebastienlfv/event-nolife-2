@@ -54,8 +54,13 @@ function fetchUser() {
     })
 
     socket.on('newMessageAll', (content) => {
+      console.log(content);
       createElementFunction('newMessageAll', content)
       scrollToBottom()
+    })
+
+    socket.on('oldMessages', (messages) => {
+      
     })
 
     socket.on('writting', (pseudo) => {
@@ -73,13 +78,13 @@ function fetchUser() {
 
     // FUNCTIONS
 
-    function writting() {
-      socket.emit('writting', pseudo)
-    }
+    // function writting() {
+    //   socket.emit('writting', pseudo)
+    // }
 
-    function notWritting() {
-      socket.emit('notWritting')
-    }
+    // function notWritting() {
+    //   socket.emit('notWritting')
+    // }
 
     function createElementFunction(element, content) {
 
@@ -102,6 +107,18 @@ function fetchUser() {
         case 'newMessageAll':
           newElement.classList.add(element, 'message')
           newElement.innerHTML = content.pseudo + ' : ' + content.message
+          document.getElementById('msgContainer').appendChild(newElement)
+          break;
+
+        case 'oldMessages':
+          newElement.classList.add(element, 'message')
+          newElement.innerHTML = content.sender + ' : ' + content.content
+          document.getElementById('msgContainer').appendChild(newElement)
+          break;
+
+        case 'oldMessagesMe': 
+          newElement.classList.add('newMessageMe', 'message')
+          newElement.innerHTML = content.sender + ' : ' + content.content
           document.getElementById('msgContainer').appendChild(newElement)
           break;
 

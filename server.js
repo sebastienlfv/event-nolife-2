@@ -2,7 +2,7 @@ const http = require('http');
 const app = require('./app');
 const dotenv = require('dotenv')
 const server = http.createServer(app);
-const User = require('./models/user')
+const chatModel = require('./models/chat');
 dotenv.config()
 
 const normalizePort = val => {
@@ -56,9 +56,19 @@ io.on('connection', (socket) => {
   socket.on('pseudo', (pseudo) => {
     socket.pseudo = pseudo;
     socket.broadcast.emit('newUser', pseudo)
+
+    chatModel.findAll()
+      .then((err, messages) => {
+        socket.emit('oldMessages', messages)
+      })
   })
 
   socket.on('newMessage', (message) => {
+    var chat = new chatModel()
+    chat.content = message
+    chat.sender = socket.pseudo
+    chat.save()
+    
     socket.broadcast.emit('newMessageAll', { message: message, pseudo: socket.pseudo })
   })
 

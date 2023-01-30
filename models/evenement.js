@@ -29,10 +29,6 @@ const evenementSchema = sequelize.define('evenements', {
     type: DataTypes.STRING,
     allowNull: true
   },
-  // eventChat: {
-  //   type: [],
-  //   defaultValue: '[]'
-  // },
   eventParticipant: {
     type: [],
     defaultValue: '[]'

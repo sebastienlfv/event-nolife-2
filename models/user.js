@@ -58,8 +58,7 @@ const userSchema = sequelize.define('users', {
     type: DataTypes.NUMBER,
     defaultValue: '0'
   }
-}, {timestamps: false}
-)
+}, {timestamps: false})
 
 const userModel = sequelize.model('users', userSchema)
 module.exports = userModel
