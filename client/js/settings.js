@@ -30,6 +30,12 @@ fetch(URL + PORT + '/api/auth/' + localStorage.getItem('userId'))
   .then(function(dataUserFromApi) {
     console.log('user API', dataUserFromApi);
     pseudoNav.innerHTML = dataUserFromApi.pseudo
+
+    if(dataUserFromApi.isAdmin == 1) {
+      adminOnglet.style.display = 'flex'
+    } else {
+      adminOnglet.style.display = 'none'
+    }
   })
   .catch((err) => {
     console.log(err);
@@ -71,7 +77,7 @@ function displayUser(dataFromApi) {
   lastname.innerHTML = 'Nom: ' + dataFromApi.lastname
   email.innerHTML = 'Email: ' + dataFromApi.email
 
-  if(adminVerif == 1) {
+  if(dataFromApi.isAdmin == 1) {
     role.innerHTML = 'Rôle: Administrateur'
   } else {
     role.innerHTML = 'Rôle: Partenaire'

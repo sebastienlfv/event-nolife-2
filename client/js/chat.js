@@ -10,6 +10,8 @@ fetchUser()
 
 const pseudoNav = document.querySelector('.pseudo')
 
+const adminOnglet = document.querySelector('.admin')
+
 function scrollToBottom() {
   const el = document.getElementById("msgContainer");
     el.scrollTop = el.scrollHeight;
@@ -25,6 +27,12 @@ function fetchUser() {
   .then(function(dataUserFromApi) {
     console.log('user API', dataUserFromApi);
     pseudoNav.innerHTML = dataUserFromApi.pseudo
+
+    if(dataUserFromApi.isAdmin == 1) {
+      adminOnglet.style.display = 'flex'
+    } else {
+      adminOnglet.style.display = 'none'
+    }
 
     var pseudo = dataUserFromApi.pseudo
     socket.emit('pseudo', pseudo)
@@ -60,7 +68,13 @@ function fetchUser() {
     })
 
     socket.on('oldMessages', (messages) => {
-      
+      messages.forEach(message => {
+        if(message.sender === pseudo) {
+          createElementFunction('oldMessagesMe', message)
+        } else {
+          createElementFunction('oldMessages', message)
+        }
+      })
     })
 
     socket.on('writting', (pseudo) => {

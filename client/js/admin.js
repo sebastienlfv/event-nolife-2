@@ -8,15 +8,8 @@ if(token === null) {
 }
 
 const adminOnglet = document.querySelector('.admin')
-const adminVerif = localStorage.getItem('isAdmin')
-console.log(adminVerif);
 
-if(adminVerif == 1) {
-  adminOnglet.style.display = 'flex'
-} else {
-  adminOnglet.style.display = 'none'
-  window.location.href = './index.html'
-}
+
 
 fetchEvent()
 
@@ -31,6 +24,12 @@ fetch(URL + PORT + '/api/auth/' + localStorage.getItem('userId'))
   .then(function(dataUserFromApi) {
     console.log('user API', dataUserFromApi);
     pseudoNav.innerHTML = dataUserFromApi.pseudo
+
+    if(dataUserFromApi.isAdmin == 1) {
+      adminOnglet.style.display = 'flex'
+    } else {
+      adminOnglet.style.display = 'none'
+    }
   })
   .catch((err) => {
     console.log(err);

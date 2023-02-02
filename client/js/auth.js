@@ -43,7 +43,6 @@ function login() {
       localStorage.setItem('token', response.token)
       localStorage.setItem('userId', response.userId)
       localStorage.setItem('pseudo', response.pseudo)
-      localStorage.setItem('isAdmin', response.isAdmin)
       window.location.href = '../../index.html'
     } else if (this.status === 404) {
       statusLogin.innerHTML = 'Compte introuvable !'

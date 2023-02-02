@@ -2,8 +2,25 @@ const http = require('http');
 const app = require('./app');
 const dotenv = require('dotenv')
 const server = http.createServer(app);
-const chatModel = require('./models/chat');
+const mongoose = require('mongoose')
 dotenv.config()
+
+const ObjectId = mongoose.Types.ObjectId
+
+mongoose.set('strictQuery', true)
+
+mongoose.connect('mongodb+srv://sebastienlfv:1712Sebout@cluster0.jbfv0rt.mongodb.net/ChatEvent', { useNewUrlParser: true, useUnifiedTopology: true }, 
+function(err) {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log('Connexion à la BBD MONGODB');
+  }
+})
+
+require('./models/chat-mongoose')
+var Chat = mongoose.model('chats')
+// const Chat = require('./models/chat')
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
@@ -57,18 +74,19 @@ io.on('connection', (socket) => {
     socket.pseudo = pseudo;
     socket.broadcast.emit('newUser', pseudo)
 
-    chatModel.findAll()
-      .then((err, messages) => {
-        socket.emit('oldMessages', messages)
-      })
+    Chat.find((err, messages) => {
+      socket.emit('oldMessages', messages)
+    })
   })
 
   socket.on('newMessage', (message) => {
-    var chat = new chatModel()
+    var chat = new Chat()
     chat.content = message
     chat.sender = socket.pseudo
     chat.save()
-    
+
+    console.log(chat.sender);
+
     socket.broadcast.emit('newMessageAll', { message: message, pseudo: socket.pseudo })
   })
 

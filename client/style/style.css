@@ -92,7 +92,7 @@
 #main-home .event-container {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 77%;
+  width: 78%;
   padding: 50px;
   display: flex;
   gap: 50px;
@@ -121,7 +121,7 @@
 #main-home .event-details {
   font-family: "Cavilant";
   padding: 50px;
-  width: 68%;
+  width: 78%;
   display: none;
 }
 #main-home .event-details h1 {
@@ -266,7 +266,7 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  width: 77%;
+  width: 75%;
   margin: auto;
   margin-top: 0;
   color: #fff;
@@ -372,7 +372,7 @@
 }
 
 .app {
-  width: 100%;
+  width: 83%;
   height: 100%;
 }
 
@@ -445,7 +445,7 @@ form > input[type=submit] {
 
 .usersConnected {
   width: 180px;
-  margin-left: 10px;
+  margin-left: 50px;
   color: #fff;
   font-family: "Cavilant";
 }

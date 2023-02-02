@@ -8,14 +8,12 @@ if(token === null) {
 }
 
 const adminOnglet = document.querySelector('.admin')
-const adminVerif = localStorage.getItem('isAdmin')
-console.log(adminVerif);
 
-if(adminVerif == 1) {
-  adminOnglet.style.display = 'flex'
-} else {
-  adminOnglet.style.display = 'none'
-}
+const buttonDeco = document.querySelector('.deconnexion')
+buttonDeco.addEventListener('click', () => {
+  localStorage.clear()
+  window.location.href = './client/connect.html'
+})
 
 fetchEvent()
 
@@ -30,6 +28,14 @@ fetch( URL + PORT + '/api/auth/' + localStorage.getItem('userId'))
   .then(function(dataUserFromApi) {
     console.log('user API', dataUserFromApi);
     pseudoNav.innerHTML = dataUserFromApi.pseudo
+
+    console.log(dataUserFromApi.isAdmin == 1);
+
+    if(dataUserFromApi.isAdmin == 1) {
+      adminOnglet.style.display = 'flex'
+    } else {
+      adminOnglet.style.display = 'none'
+    }
   })
   .catch((err) => {
     console.log(err);
