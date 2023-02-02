@@ -262,6 +262,25 @@
   display: none;
 }
 
+.confirm-modify-settings {
+  position: absolute;
+  top: 250px;
+  background-color: rgb(26, 26, 26);
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.062);
+  width: 600px;
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.confirm-modify-settings div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 .setting-container-modify {
   display: none;
   flex-direction: column;
@@ -275,12 +294,13 @@
 .setting-container-modify .error-confirm {
   margin-top: 20px;
 }
-.setting-container-modify .modifySettings, .setting-container-modify .CancelButton, .setting-container-modify .ValidateSettings {
+.setting-container-modify .modifySettings, .setting-container-modify .CancelButton, .setting-container-modify .ValidateSettings, .setting-container-modify .goToValidate, .setting-container-modify .goToCancel {
   background-color: red;
   color: #fff;
   padding: 10px 40px;
   margin-top: 40px;
   cursor: pointer;
+  border: none;
 }
 .setting-container-modify img {
   width: 130px;
