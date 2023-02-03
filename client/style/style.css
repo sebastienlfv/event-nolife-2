@@ -508,7 +508,7 @@ form > input[type=submit] {
 
 /* Messages from databse */
 .oldMessages {
-  background-color: rgb(204, 211, 211);
+  border-left: 1px solid red;
   margin-top: 2%;
 }
 
