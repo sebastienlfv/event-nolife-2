@@ -7,15 +7,34 @@ if(token === null) {
   window.location.href = '../client/connect.html'
 }
 
-const adminOnglet = document.querySelector('.admin')
-const adminVerif = localStorage.getItem('isAdmin')
-console.log(adminVerif);
+const buttonDeco = document.querySelector('.deconnexion')
+buttonDeco.addEventListener('click', () => {
+  localStorage.clear()
+  window.location.href = '../client/connect.html'
+})
 
-if(adminVerif == 1) {
-  adminOnglet.style.display = 'flex'
-} else {
-  adminOnglet.style.display = 'none'
-}
+const adminOnglet = document.querySelector('.admin')
+fetch( URL + PORT + '/api/auth/' + localStorage.getItem('userId')) 
+  .then(function(res) {
+    if(res.ok) {
+      return res.json()
+    }
+  })
+  .then(function(dataUserFromApi) {
+    console.log('user API', dataUserFromApi);
+    pseudoNav.innerHTML = dataUserFromApi.pseudo
+
+    console.log(dataUserFromApi.isAdmin == 1);
+
+    if(dataUserFromApi.isAdmin == 1) {
+      adminOnglet.style.display = 'flex'
+    } else {
+      adminOnglet.style.display = 'none'
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  })
 
 fetchUser()
 

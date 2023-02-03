@@ -39,10 +39,8 @@ function login() {
   xhttp.onreadystatechange = function() {
     if(this.status === 200) {
       const response = JSON.parse(this.responseText)
-      localStorage.setItem('email', response.email)
       localStorage.setItem('token', response.token)
       localStorage.setItem('userId', response.userId)
-      localStorage.setItem('pseudo', response.pseudo)
       window.location.href = '../../index.html'
     } else if (this.status === 404) {
       statusLogin.innerHTML = 'Compte introuvable !'

@@ -3,6 +3,12 @@ if(token === null) {
   window.location.href = '../client/connect.html'
 }
 
+const buttonDeco = document.querySelector('.deconnexion')
+buttonDeco.addEventListener('click', () => {
+  localStorage.clear()
+  window.location.href = '../client/connect.html'
+})
+
 var socket = io.connect('http://localhost:3000/')
 const userId = localStorage.getItem('userId')
 

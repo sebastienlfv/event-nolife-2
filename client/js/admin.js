@@ -7,6 +7,12 @@ if(token === null) {
   window.location.href = '../client/connect.html'
 }
 
+const buttonDeco = document.querySelector('.deconnexion')
+buttonDeco.addEventListener('click', () => {
+  localStorage.clear()
+  window.location.href = '../client/connect.html'
+})
+
 const adminOnglet = document.querySelector('.admin')
 
 
