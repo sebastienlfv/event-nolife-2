@@ -152,6 +152,7 @@
   margin-top: 40px;
   cursor: pointer;
   display: flex;
+  border: none;
 }
 #main-home .event-details .leaveEvent {
   display: none;
@@ -271,7 +272,6 @@
   height: 200px;
   text-align: center;
   justify-content: center;
-  display: flex;
   flex-direction: column;
   display: none;
 }
@@ -281,7 +281,48 @@
   gap: 10px;
 }
 
-.setting-container-modify {
+.changePasswordContainer {
+  position: absolute;
+  top: -100px;
+  left: -50px;
+  background-color: rgb(26, 26, 26);
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.062);
+  width: 600px;
+  height: 300px;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+}
+.changePasswordContainer p {
+  margin-top: 50px;
+}
+.changePasswordContainer .confirmChangePw {
+  gap: 20px;
+}
+.changePasswordContainer div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+.changePasswordContainer div input {
+  height: 20px;
+  padding-left: 5px;
+}
+.changePasswordContainer button {
+  margin: auto;
+  background-color: red;
+  color: #fff;
+  padding: 10px 40px;
+  width: 150px;
+  margin-top: 40px;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+}
+
+.setting-container-modify, .setting-container {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -291,10 +332,16 @@
   color: #fff;
   font-family: "Cavilant";
 }
-.setting-container-modify .error-confirm {
+.setting-container-modify .error-confirm, .setting-container .error-confirm {
   margin-top: 20px;
 }
-.setting-container-modify .modifySettings, .setting-container-modify .CancelButton, .setting-container-modify .ValidateSettings, .setting-container-modify .goToValidate, .setting-container-modify .goToCancel {
+.setting-container-modify .container-button-setting, .setting-container .container-button-setting {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+.setting-container-modify .modifySettings, .setting-container-modify .CancelButton, .setting-container-modify .ValidateSettings, .setting-container-modify .goToValidate, .setting-container-modify .goToCancel, .setting-container-modify .changePassword, .setting-container .modifySettings, .setting-container .CancelButton, .setting-container .ValidateSettings, .setting-container .goToValidate, .setting-container .goToCancel, .setting-container .changePassword {
   background-color: red;
   color: #fff;
   padding: 10px 40px;
@@ -302,32 +349,32 @@
   cursor: pointer;
   border: none;
 }
-.setting-container-modify img {
+.setting-container-modify img, .setting-container img {
   width: 130px;
   margin: inherit !important;
   margin-top: 50px !important;
 }
-.setting-container-modify .pseudoSetting {
+.setting-container-modify .pseudoSetting, .setting-container .pseudoSetting {
   font-size: 20px;
   margin-top: 30px;
 }
-.setting-container-modify .setting-container-details {
+.setting-container-modify .setting-container-details, .setting-container .setting-container-details {
   display: flex;
   justify-content: space-between;
   width: 60%;
   margin-top: 50px;
 }
-.setting-container-modify .setting-container-details #modifyButtons {
+.setting-container-modify .setting-container-details #modifyButtons, .setting-container .setting-container-details #modifyButtons {
   display: flex;
   justify-content: center;
 }
-.setting-container-modify .setting-container-details label {
+.setting-container-modify .setting-container-details label, .setting-container .setting-container-details label {
   margin-right: 10px;
   font-family: sans-serif;
   letter-spacing: 2px;
   color: gray;
 }
-.setting-container-modify .setting-container-details input {
+.setting-container-modify .setting-container-details input, .setting-container .setting-container-details input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #fff;
@@ -336,19 +383,19 @@
   height: 30px;
   padding-left: 5px;
 }
-.setting-container-modify .setting-container-details input:focus-visible {
+.setting-container-modify .setting-container-details input:focus-visible, .setting-container .setting-container-details input:focus-visible {
   outline: none;
 }
-.setting-container-modify .setting-container-details-left {
+.setting-container-modify .setting-container-details-left, .setting-container .setting-container-details-left {
   text-align: center;
 }
-.setting-container-modify .setting-container-details-left input:nth-child(1) {
+.setting-container-modify .setting-container-details-left input:nth-child(1), .setting-container .setting-container-details-left input:nth-child(1) {
   margin-bottom: 10px;
 }
-.setting-container-modify .setting-container-details-right {
+.setting-container-modify .setting-container-details-right, .setting-container .setting-container-details-right {
   text-align: center;
 }
-.setting-container-modify .setting-container-details-right input:nth-child(1) {
+.setting-container-modify .setting-container-details-right input:nth-child(1), .setting-container .setting-container-details-right input:nth-child(1) {
   margin-bottom: 10px;
 }
 

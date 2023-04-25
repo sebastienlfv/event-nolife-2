@@ -92,3 +92,43 @@ module.exports.login = async (req, res) => {
       return res.status(500).json({ error: 'unable to verify user' })
     })
 }
+
+module.exports.changePassword = async (req, res) => {
+  const userId = req.body.userId;
+  const oldPassword = req.body.oldPassword;
+  const newPassword = req.body.newPassword;
+
+  if (userId == null || oldPassword == null || newPassword == null) {
+    return res.status(400).json({ error: 'Missing parameters' });
+  }
+
+  User.findOne({
+    where: { id: userId },
+  })
+    .then(function (userFound) {
+      if (userFound) {
+        bcrypt.compare(oldPassword, userFound.password, function (errHash, resHash) {
+          if (resHash) {
+            bcrypt.hash(newPassword, 10, function (err, hash) {
+              if (err) {
+                return res.status(500).json({ error: 'Error hashing password' });
+              }
+
+              userFound.update({ password: hash }).then(function (updatedUser) {
+                return res.status(200).json({ message: 'Password updated successfully' });
+              }).catch(function (err) {
+                return res.status(500).json({ error: 'Error updating password' });
+              });
+            });
+          } else {
+            return res.status(403).json({ error: 'Incorrect old password' });
+          }
+        });
+      } else {
+        return res.status(404).json({ error: 'User not found' });
+      }
+    })
+    .catch(function (err) {
+      return res.status(500).json({ error: 'Unable to verify user' });
+    });
+};

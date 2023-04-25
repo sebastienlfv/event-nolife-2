@@ -9,7 +9,7 @@ module.exports.getOneUser = async (req, res) => {
 module.exports.deleteUser = async (req, res) => {
   try {
     await User.destroy({
-      where: { id: req.params.id }
+      where: { userId: req.params.id }
     })
     res.status(200).json({ message: 'Utilisateur supprimé !' })
   } catch(err) {
@@ -27,7 +27,7 @@ module.exports.modifyUser = async (req, res) => {
       password: req.body.password
     },
     {
-      where: { id: req.params.id }
+      where: { userId: req.params.id }
     }
   )
   .then(() => res.status(200).json({ message: 'Informations modifiés !' }))

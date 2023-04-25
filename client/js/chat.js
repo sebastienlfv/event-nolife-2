@@ -42,7 +42,6 @@ function fetchUser() {
 
     var pseudo = dataUserFromApi.pseudo
     socket.emit('pseudo', pseudo)
-    document.title = pseudo + ' - ' + document.title
 
     document.getElementById('chatForm').addEventListener('submit', (e) => {
       e.preventDefault();

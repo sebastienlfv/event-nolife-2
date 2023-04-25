@@ -6,6 +6,7 @@ const userCtrl = require('../controllers/user')
 // auth
 router.post('/register', authCtrl.register)
 router.post('/login', authCtrl.login)
+router.post('/changePassword', authCtrl.changePassword)
 
 // user db
 router.get('/:id', userCtrl.getOneUser)

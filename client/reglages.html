@@ -56,7 +56,21 @@
             <p class="role"></p>
           </div>
         </div>
-        <button class="modifySettings">Modifier mes informations</button>
+        <div class="container-button-setting">
+          <button class="modifySettings">Modifier mes informations</button>
+          <button class="changePassword">Changer mon mot de passe</button>
+          <div class="changePasswordContainer">
+            <p>Modifie ton mot de passe</p>
+            <div>
+              <input type="text" placeholder="Ancien mot de passe" class="oldPassword">
+              <input type="text" placeholder="Nouveau mot de passe" class="newPassword">
+            </div>
+            <div class="confirmChangePw">
+              <button class="confirmChangePw">Confirmer</button>
+              <button class="cancelChangePw">Annuler</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="setting-container-modify">
         <img src="./images/user.png">
@@ -81,8 +95,8 @@
             <button class="ValidateSettings">Confirmer</button>
             <button class="CancelButton">Annuler</button>
           </div>
+          <span class="error-confirm"></span>
         </div>
-        <span class="error-confirm"></span>
       </div>
     </section>
   </main>

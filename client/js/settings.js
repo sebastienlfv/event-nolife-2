@@ -103,6 +103,13 @@ function displayUser(dataFromApi) {
   }
 }
 
+const goToValidate = document.querySelector('.goToValidate')
+const goToCancel = document.querySelector('.goToCancel')
+
+goToValidate.addEventListener('click', () => {
+  document.querySelector('.confirm-modify-settings').style.display = 'flex'
+})
+
 const modifyInformationDetails = document.querySelector('.modifySettings')
 const containerModifyInfo = document.querySelector('.setting-container-modify')
 const containerInfo = document.querySelector('.setting-container')
@@ -118,6 +125,8 @@ const cancelButton = document.querySelector('.CancelButton')
 cancelButton.addEventListener('click', () => {
   containerInfo.style.display = 'flex'
   containerModifyInfo.style.display = 'none'
+  document.querySelector('.confirm-modify-settings').style.display = 'none'
+  document.querySelector('.error-confirm').innerHTML = ''
 })
 
 const modifySettings = document.querySelector('.ValidateSettings')
@@ -157,4 +166,16 @@ modifySettings.addEventListener('click', () => {
       errorConfirm.style.color = 'red'
       console.log(err);
     })
+})
+
+const changePassword = document.querySelector('.changePassword')
+const containerPassword = document.querySelector('.changePasswordContainer')
+const cancelChangePw = document.querySelector('.cancelChangePw')
+
+changePassword.addEventListener('click', () => {
+  containerPassword.style.display = 'flex'
+})
+
+cancelChangePw.addEventListener('click', () => {
+  containerPassword.style.display = 'none'
 })
